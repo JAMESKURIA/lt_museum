@@ -1,0 +1,68 @@
+<%- include('partials/header'); %>
+
+<section class="product-section other-page">
+  <div class="filter">
+    <span>Filter by &nbsp;</span>
+    <select>
+      <option value="All">All Categories</option>
+
+      <% types.forEach(type => { %>
+      <option value="<%= type.id  %> "><%= type.name %></option>
+
+      <% }) %>
+    </select>
+  </div>
+
+  <div class="products">
+    <% products.length > 0 && products.forEach(product => { %>
+
+    <div class="card" data-product="<%= JSON.stringify(product) %> ">
+      <div class="img">
+        <img class="image" src="./images/<%= product.image %> " alt="" />
+      </div>
+      <div class="details">
+        <h3 class="name"><%= product.name %></h3>
+        <h3 class="price">
+          Ksh <%= parseFloat(product.price).toLocaleString("en-US") %>
+        </h3>
+        <button class="addBtn">Add to Cart</button>
+      </div>
+    </div>
+
+    <% }) %>
+  </div>
+</section>
+
+<script type="text/javascript" defer>
+  const cards = document.querySelectorAll(".card");
+  // console.log(cards);
+
+  const handleAdd = () => {
+    cards.forEach((card) => {
+      let product = card.dataset.product;
+
+      const addBtn = card.querySelector(".addBtn");
+
+      product = JSON.parse(product);
+
+      let products = [];
+      addBtn.addEventListener("click", () => {
+        if (localStorage.getItem("products")) {
+          products = JSON.parse(localStorage.getItem("products"));
+        }
+
+        products.push(product);
+
+        localStorage.setItem("products", JSON.stringify(products));
+
+        // console.log("Button clicked", product);
+
+        alert("Added to cart :)");
+      });
+    });
+  };
+
+  handleAdd();
+</script>
+
+<%- include('partials/footer'); %>

@@ -1,0 +1,179 @@
+.single-product-section .container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 3rem;
+  height: calc(var(--landing) - 10vh);
+}
+
+.single-product-section .container .img-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 5%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.single-product-section .container .img-container .img {
+  height: 70%;
+}
+
+.single-product-section .container .img-container .related-images {
+  height: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+}
+
+.single-product-section .container .img-container .related-images .related {
+  width: 200px;
+  max-width: 1fr;
+}
+
+.single-product-section .container .description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+  padding: 3rem 2rem;
+  position: relative;
+}
+
+.single-product-section .container .description h2 {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: var(--react-font);
+  letter-spacing: 1px;
+}
+
+.single-product-section .container .description p {
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--primary-color);
+  padding-bottom: 4rem;
+}
+
+.single-product-section .container .description .btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.single-product-section .container .description .btns button {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.single-product-section .container .description .btns button:hover {
+  -webkit-box-shadow: var(--button-shadow);
+          box-shadow: var(--button-shadow);
+}
+
+.single-product-section .reviews {
+  background-color: #fefefe;
+  padding: 2rem 0px 6rem;
+  position: relative;
+}
+
+.single-product-section .reviews h1 {
+  font-size: 22px;
+  font-weight: bold;
+  font-family: var(--react-font);
+  letter-spacing: 1px;
+  padding-bottom: 2rem;
+}
+
+.single-product-section .reviews .review {
+  background-color: #eee;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 1rem 2rem;
+}
+
+.single-product-section .reviews .review .name {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: var(--react-font);
+  padding: none;
+  margin: none;
+}
+
+.single-product-section .reviews .review .date {
+  margin-top: -0.8rem;
+  color: #333;
+  font-size: 12px;
+  font-weight: normal;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.single-product-section .reviews .review p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--primary-color);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  width: 99%;
+  margin-left: auto;
+}
+
+.single-product-section .reviews .leave-feedback {
+  padding-top: 2rem;
+}
+
+.single-product-section .reviews .leave-feedback textarea {
+  width: 100%;
+  background-color: #eee;
+  border-radius: 5px;
+  color: #333;
+  font-weight: normal;
+  font-family: var(--react-font);
+  font-size: 16px;
+  padding: 1.5rem 2rem;
+  line-height: 1.5em;
+  outline: none;
+  border: none;
+  letter-spacing: 1.3px;
+}
+
+.single-product-section .reviews .leave-feedback #send-feedback {
+  position: absolute;
+  bottom: 0;
+  right: 2rem;
+  text-transform: capitalize;
+}
+
+.footer,
+header {
+  width: 100%;
+  background-color: #eee;
+  z-index: 10;
+  position: fixed;
+}
+/*# sourceMappingURL=products.css.map */

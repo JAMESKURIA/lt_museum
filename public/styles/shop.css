@@ -1,0 +1,99 @@
+.product-section .filter span {
+  font-size: 18px;
+  font-family: var(--react-font);
+}
+
+.product-section .filter select {
+  width: 10rem;
+  border: none;
+  border-radius: 5px;
+  padding: 1em;
+  font-size: 16px;
+  outline: none;
+}
+
+.product-section .products {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(400px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 2rem;
+}
+
+.product-section .products .card {
+  margin: 2rem 0px;
+  background-color: #f1f1f1;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.product-section .products .card .details {
+  position: relative;
+}
+
+.product-section .products .card .details button {
+  position: absolute;
+  right: 1.5em;
+  top: 70%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.product-section .products .card .details button:hover {
+  -webkit-box-shadow: 0px 0px 15px #333;
+          box-shadow: 0px 0px 15px #333;
+}
+
+.product-section .products .card h3,
+.product-section .products .card span {
+  font-family: var(--react-font);
+  padding: 0px 20px;
+}
+
+.product-section .products .card .name {
+  color: var(--primary-color);
+  font-size: 20px;
+  padding: 0.5rem 20px;
+}
+
+.product-section .products .card .price {
+  color: #333;
+}
+
+.product-section .products .card .img {
+  position: relative;
+  height: 70%;
+  overflow: hidden;
+}
+
+.product-section .products .card .img:hover {
+  cursor: pointer;
+}
+
+.product-section .products .card .img:hover img {
+  -webkit-transform: scale(2);
+          transform: scale(2);
+}
+
+.product-section .products .card .img:hover:after {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #333;
+  opacity: 0.3;
+}
+
+.footer,
+header {
+  width: 100%;
+  background-color: #eee;
+  z-index: 10;
+  position: fixed;
+}
+/*# sourceMappingURL=shop.css.map */

@@ -1,0 +1,110 @@
+.product-section {
+  // display: flex;
+  // flex-direction: column;
+  // padding: calc(var(--header) + 3em) calc((100% - var(--width)) / 2)
+  //   calc(var(--footer) + 3em);
+  // background-color: tomato;
+
+  .filter {
+    span {
+      font-size: 18px;
+      font-family: var(--react-font);
+    }
+
+    select {
+      // background-color: tomato;
+      // height: 2rem;
+      width: 10rem;
+      // border: 1px solid #333;
+      border: none;
+      border-radius: 5px;
+      // margin-left: 1em;
+      padding: 1em;
+      font-size: 16px;
+      outline: none;
+    }
+  }
+
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-gap: 2rem;
+
+    .card {
+      margin: 2rem 0px;
+      background-color: rgb(241, 241, 241);
+      height: 300px;
+      overflow: hidden;
+      position: relative;
+
+      .details {
+        position: relative;
+        button {
+          position: absolute;
+          right: 1.5em;
+          top: 70%;
+          transform: translateY(-50%);
+          box-shadow: none;
+
+          &:hover {
+            box-shadow: 0px 0px 15px #333;
+          }
+        }
+      }
+
+      h3,
+      span {
+        font-family: var(--react-font);
+        padding: 0px 20px;
+      }
+
+      // .details {
+      //   display: flex;
+      //   justify-content: space-between;
+      //   align-items: center;
+      // }
+      .name {
+        color: var(--primary-color);
+        font-size: 20px;
+        padding: 0.5rem 20px;
+      }
+
+      .price {
+        color: #333;
+      }
+
+      .img {
+        position: relative;
+
+        height: 70%;
+        overflow: hidden;
+        &:hover {
+          cursor: pointer;
+
+          img {
+            transform: scale(2);
+          }
+
+          &:after {
+            content: "";
+            position: absolute;
+            top: 0%;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: #333;
+            opacity: 0.3;
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer,
+header {
+  width: 100%;
+  background-color: #eee;
+  z-index: 10;
+  position: fixed;
+}

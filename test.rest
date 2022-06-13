@@ -1,0 +1,34 @@
+POST http://localhost:5000/users/register
+Content-Type: application/json
+
+{   
+    "email": "janedoe8@gmail.com",
+    "password": "password",
+    "name": "Jane Doe",
+    "address": "Limuru",
+    "contact": "0700262226"
+}
+
+###
+
+POST http://localhost:5000/users/login
+Content-Type: application/json
+
+{   
+    "email": "janedoe8@gmail.com",
+    "password": "password"
+}
+
+###
+
+GET http://localhost:5000/users
+
+
+
+###
+
+
+GET http://localhost:5000/types
+
+###
+

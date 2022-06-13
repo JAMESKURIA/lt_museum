@@ -1,0 +1,27 @@
+{
+  "name": "gallery",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "build-css": "tailwindcss build -i public/styles/tailwind.css -o public/styles/styles.css"
+  },
+  "keywords": [],
+  "author": "nickjames",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.12.0-alpha.1",
+    "tailwindcss": "^2.2.16"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}

@@ -1,0 +1,71 @@
+<%- include('partials/header') %>
+
+<script>
+  const query = document.location.search.split("?")[1];
+
+  if (query == "r=true") {
+    alert("Login successful");
+  }
+</script>
+
+<section class="landing">
+  <div class="img">
+    <img id="img" src="./images/monalisa.jpg" class="image" />
+  </div>
+
+  <div class="content">
+    <h1>Twiga Matata</h1>
+    <p>
+      Twiga Matata is a painting that, amet consectetur adipisicing elit. Saepe
+      aut quis in blanditiis sint cum since 1989!
+    </p>
+    <div class="cta">
+      <button class="browse-art" onclick="document.location.href='./shop'">
+        Browse Arts
+      </button>
+      <button onclick="document.location.href='/bookings'" class="book-now">
+        Book Viewing
+      </button>
+    </div>
+  </div>
+
+  <div class="content">
+    <h1>The Monalisa</h1>
+    <p>
+      The Monalisa is a renowned painting that , amet consectetur adipisicing
+      elit. Saepe aut quis in blanditiis sint cum by Leornado Da Vinci!
+    </p>
+    <div class="cta">
+      <button class="browse-art" onclick="document.location.href='./shop'">
+        Browse Arts
+      </button>
+      <button onclick="document.location.href='/bookings'" class="book-now">
+        Book Viewing
+      </button>
+    </div>
+  </div>
+
+  <div class="content">
+    <h1>Color Blast</h1>
+    <p>
+      The painting by renowned artist Lynette adipisicing elit. Saepe aut quis
+      in blanditiis sint as the best overall!
+    </p>
+    <div class="cta">
+      <button class="browse-art" onclick="document.location.href='./shop'">
+        Browse Arts
+      </button>
+      <button onclick="document.location.href='/bookings'" class="book-now">
+        Book Viewing
+      </button>
+    </div>
+  </div>
+
+  <div class="scroll-btns">
+    <div class="scroll btn1"></div>
+    <div class="scroll btn2"></div>
+    <div class="scroll btn3"></div>
+  </div>
+</section>
+
+<%- include("partials/footer"); %>

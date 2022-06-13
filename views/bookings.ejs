@@ -1,0 +1,220 @@
+<%- include('./partials/header'); %>
+
+
+
+
+<div class="other-page">
+
+  <% products.forEach(product => { %>
+
+    <% const thisDate = new Date(product.bookings[0].date).toUTCString().split(" ") %> 
+ 
+ 
+
+    <div class="grid grid-cols-3 py-4 px-3 w-full border-b-2 border-gray-200">
+      <div class="grid gap-3 justify-self-start">
+        <div class="text-xs text-gray-500"><span><%= thisDate[0] %> <%= thisDate[1]  %>  <%= thisDate[2]  %>  <%= thisDate[3]  %> </span></div>
+        <div class="text-sm text-red-400 font-bold">
+          <span><%= product.bookings[0].availableTickets %> /<%= product.bookings[0].soldTickets %>  tickets sold</span>
+        </div>
+      </div>
+      <div class="grid gap-3 justify-self-start">
+        <div class="font-bold text-2xl text-gray-800">
+          <span><%= product.name %> </span>
+        </div>
+        <div class="text-gray-500 text-xs">
+          <span>Virtual Event starting <%= thisDate[4] %> <%= thisDate[5]  %>  </span>
+        </div>
+      </div>
+      <div class="grid gap-3 justify-self-end">
+        <div class="text-gray-500 text-sm">
+          <span>Tickets from <span class="text-gray-600">Ksh <%= product.price %> </span></span>
+        </div>
+        <div>
+          <span
+            ><input
+              class="
+                rounded
+                py-2
+                px-4
+                bg-pink-400
+                text-white
+                cursor-pointer
+                hover:bg-pink-500
+                transition
+                duration-250
+                ease-out
+              "
+              type="button"
+              value="Buy ticket"
+              onclick="toggleModal('modal-id')"
+          /></span>
+        </div>
+      </div>
+    </div>
+  
+  
+  
+  <% }) %>
+  
+  
+  
+
+
+</div>
+
+<!-- Modal -->
+<div
+  class="
+    hidden
+    overflow-x-hidden overflow-y-auto
+    fixed
+    inset-0
+    z-50
+    outline-none
+    focus:outline-none
+    justify-center
+    items-center
+  "
+  id="modal-id"
+>
+  <div class="relative w-auto my-6 mx-auto max-w-3xl">
+    <!--content-->
+    <div
+      class="
+        border-0
+        rounded-lg
+        shadow-lg
+        relative
+        flex flex-col
+        w-full
+        bg-white
+        outline-none
+        focus:outline-none
+      "
+    >
+      <!--header-->
+      <div
+        class="
+          flex
+          items-start
+          justify-between
+          p-5
+          border-b border-solid border-blueGray-200
+          rounded-t
+        "
+      >
+        <h3 class="text-3xl font-semibold">Modal Title</h3>
+        <button
+          style="box-shadow: none; width: auto; background: none"
+          class="
+            p-1
+            border-0
+            text-3xl
+            leading-none
+            font-semibold
+            outline-none
+            focus:outline-none
+            justify-self-end
+          "
+          onclick="toggleModal('modal-id')"
+        >
+          <span
+            class="
+              text-gray-800
+              h-6
+              w-6
+              text-2xl
+              block
+              outline-none
+              focus:outline-none
+            "
+          >
+            ×
+          </span>
+        </button>
+      </div>
+      <!--body-->
+      <div class="relative p-6 flex-auto">
+        <p class="my-4 text-blueGray-500 text-lg leading-relaxed">
+          COnfirm payment 
+        </p>
+      </div>
+      <!--footer-->
+      <div
+        class="
+          flex
+          items-center
+          justify-end
+          p-6
+          border-t border-solid border-blueGray-200
+          rounded-b
+        "
+      >
+        <button
+          style="background: none; box-shadow: none"
+          class="
+            text-red-500
+            background-transparent
+            font-bold
+            uppercase
+            px-6
+            py-2
+            text-sm
+            outline-none
+            focus:outline-none
+            mr-1
+            mb-1
+            ease-linear
+            transition-all
+            duration-150
+          "
+          type="button"
+          onclick="toggleModal('modal-id')"
+        >
+          Close
+        </button>
+        <button
+          style="box-shadow: none; width: auto"
+          class="
+            bg-emerald-500
+            text-white
+            active:bg-emerald-600
+            font-bold
+            uppercase
+            text-sm
+            px-6
+            py-3
+            rounded
+            shadow
+            hover:shadow-lg
+            outline-none
+            focus:outline-none
+            mr-1
+            mb-1
+            ease-linear
+            transition-all
+            duration-150
+          "
+          type="button"
+          onclick="toggleModal('modal-id')"
+        >
+          Save Changes
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div
+  class="hidden opacity-25 fixed inset-0 z-40 bg-black"
+  id="modal-id-backdrop"
+></div>
+<script type="text/javascript">
+  function toggleModal(modalID) {
+    document.getElementById(modalID).classList.toggle("hidden");
+    document.getElementById(modalID + "-backdrop").classList.toggle("hidden");
+    document.getElementById(modalID).classList.toggle("flex");
+    document.getElementById(modalID + "-backdrop").classList.toggle("flex");
+  }
+</script>
+<%- include('./partials/footer'); %>
